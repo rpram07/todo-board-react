@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Input from "./components/Input";
+import Board from "./components/Board";
+import { useState } from "react";
 function App() {
+  const [taskList, setTaskList] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>TO DO BOARD</h1>
+      <Input taskList = {taskList} setTaskList = {setTaskList}/>
+      <div>
+        {
+          taskList.map( (task, index) => 
+            <Board 
+            task = {task} key = {index} index = {index} taskList={taskList} setTaskList={setTaskList}
+            />
+          )
+        }
+      </div>
+      <Board />
+    </>
   );
 }
 
