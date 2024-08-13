@@ -10,11 +10,11 @@ const Input = ({taskList, setTaskList}) => {
     return (
         <>
            <div>
-                <form>
-                    <input type="text" placeholder="Add a task" value={input} onChange={(e) => {
+                <form className="flex flex-row items-center gap-3">
+                    <input className= "border rounded-lg text-lg py-1.5 px-2.5"type="text" placeholder="Add a task" value={input} onChange={(e) => {
                         setInput(e.target.value);
                     }}/>
-                    <button onClick={handleAddTask}>Add new</button>
+                    <button className = "bg-violet-400 rounded-lg px-3.5 py-2 text-white font-semibold hover:opacity-70"onClick={handleAddTask}>Add</button>
                 </form>
            </div>
         </>
